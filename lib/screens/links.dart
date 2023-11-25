@@ -1,5 +1,10 @@
 import 'package:flutter/cupertino.dart';
 
+const linksItem = BottomNavigationBarItem(
+  icon: Icon(CupertinoIcons.link),
+  label: 'Links',
+);
+
 class LinksTab extends StatefulWidget {
   const LinksTab({super.key});
 

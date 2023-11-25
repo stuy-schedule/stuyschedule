@@ -1,5 +1,10 @@
 import 'package:flutter/cupertino.dart';
 
+const homeItem = BottomNavigationBarItem(
+  icon: Icon(CupertinoIcons.home),
+  label: 'Home',
+);
+
 class HomeTab extends StatefulWidget {
   const HomeTab({super.key});
 

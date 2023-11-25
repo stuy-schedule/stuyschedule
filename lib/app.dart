@@ -22,59 +22,26 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.list_number),
-            label: 'Schedule',
-          ),
-          BottomNavigationBarItem(
-            // TODO: change icon to escalator
-            icon: Icon(CupertinoIcons.exclamationmark_triangle),
-            label: 'Status',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.link),
-            label: 'Links',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.settings),
-            label: 'Settings',
-          ),
+        items: const [
+          homeItem,
+          scheduleItem,
+          statusItem,
+          linksItem,
+          settingsItem
         ],
       ),
       tabBuilder: (context, index) {
-        return switch (index) {
-          0 => CupertinoTabView(
-              builder: (context) => const CupertinoPageScaffold(
-                child: HomeTab(),
-              ),
-            ),
-          1 => CupertinoTabView(
-              builder: (context) => const CupertinoPageScaffold(
-                child: ScheduleTab(),
-              ),
-            ),
-          2 => CupertinoTabView(
-              builder: (context) => const CupertinoPageScaffold(
-                child: StatusTab(),
-              ),
-            ),
-          3 => CupertinoTabView(
-              builder: (context) => const CupertinoPageScaffold(
-                child: LinksTab(),
-              ),
-            ),
-          4 => CupertinoTabView(
-              builder: (context) => const CupertinoPageScaffold(
-                child: SettingsTab(),
-              ),
-            ),
-          _ => throw Exception('Invalid index $index'),
-        };
+        return CupertinoTabView(
+            builder: (context) => CupertinoPageScaffold(
+                  child: switch (index) {
+                    0 => const HomeTab(),
+                    1 => const ScheduleTab(),
+                    2 => const StatusTab(),
+                    3 => const LinksTab(),
+                    4 => const SettingsTab(),
+                    _ => throw Exception('Invalid index $index'),
+                  },
+                ));
       },
     );
   }

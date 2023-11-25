@@ -1,5 +1,10 @@
 import 'package:flutter/cupertino.dart';
 
+const settingsItem = BottomNavigationBarItem(
+  icon: Icon(CupertinoIcons.settings),
+  label: 'Settings',
+);
+
 class SettingsTab extends StatefulWidget {
   const SettingsTab({super.key});
 

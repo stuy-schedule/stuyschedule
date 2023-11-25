@@ -1,5 +1,10 @@
 import 'package:flutter/cupertino.dart';
 
+const scheduleItem = BottomNavigationBarItem(
+  icon: Icon(CupertinoIcons.list_number),
+  label: 'Schedule',
+);
+
 class ScheduleTab extends StatefulWidget {
   const ScheduleTab({super.key});
 
